@@ -44,6 +44,7 @@ int main(int ac __attribute__((unused)), char **av)
 	if (res == -1)
 	{
 		free(buffer);
+		write(STDOUT_FILENO, "\n", 3);
 		exit(EXIT_SUCCESS);
 	}
 	return (0);
