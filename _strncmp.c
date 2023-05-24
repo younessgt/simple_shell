@@ -9,10 +9,7 @@
  */
 int _strncmp(char *str1, char *str2, int i)
 {
-	unsigned char cp1 = (unsigned char)*str1;
-	unsigned char cp2 = (unsigned char)*str2;
-
-	while (i > 0 && cp1 && (cp1 == cp2))
+	while (i > 0 && *str1 && (*str1 == *str2))
 	{
 		++str1;
 		++str2;
