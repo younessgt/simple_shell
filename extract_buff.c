@@ -14,7 +14,7 @@ char **extract_tok(char *p, int n)
 	arg = malloc(sizeof(char *) * (n + 1));
 	if (arg == NULL)
 		return (NULL);
-	tok = strtok(p, " \n");
+	tok = strtok(p, " \t\n");
 	for (i = 0; tok != NULL; i++)
 	{
 		arg[i] = malloc(sizeof(char) * (_strlen(tok) + 1));
@@ -28,7 +28,7 @@ char **extract_tok(char *p, int n)
 			return (NULL);
 		}
 		_strcpy(arg[i], tok);
-		tok = strtok(NULL, " \n");
+		tok = strtok(NULL, " \t\n");
 
 	}
 	arg[i] = NULL;
