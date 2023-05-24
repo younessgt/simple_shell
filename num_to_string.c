@@ -1,6 +1,9 @@
 #include "main.h"
-
-
+/**
+ * num_to_string - function that convert a number to string
+ * @i: number of the commands
+ * Return: NULL if it fails and pointer to chracter if it successed
+ */
 char *num_to_string(int i)
 {
 	int num1 = i, num2, j = 0, init = 0, finish, num_length = 0;

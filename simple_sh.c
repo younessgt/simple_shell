@@ -7,7 +7,7 @@
 /**
  * main - entry point
  * @ac : the number of arguments
- * @av: the argument vector 
+ * @av: the argument vector
  * Return: 0 on success, -1 on failure
  */
 int main(int ac __attribute__((unused)), char **av)
@@ -24,7 +24,7 @@ int main(int ac __attribute__((unused)), char **av)
 	{
 
 		i++;
-		if (strcmp(buffer, "exit\n") == 0)
+		if (_strcmp(buffer, "exit\n") == 0)
 		{
 			free(buffer);
 			exit(EXIT_FAILURE);
@@ -41,6 +41,10 @@ int main(int ac __attribute__((unused)), char **av)
 		if (intera == 1)
 			write(1, "$ ", 3);
 	}
-	free(buffer);
+	if (res == -1)
+	{
+		free(buffer);
+		exit(EXIT_SUCCESS);
+	}
 	return (0);
 }
