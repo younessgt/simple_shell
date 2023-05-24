@@ -9,7 +9,7 @@ void handle_exit(char *buffer)
 	char p[1024];
 	char *tok;
 
-	strcpy(p, buffer);
+	_strcpy(p, buffer);
 	tok =  strtok(p, " \t\n");
 	while (tok != NULL)
 	{
