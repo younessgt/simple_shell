@@ -24,11 +24,7 @@ int main(int ac __attribute__((unused)), char **av)
 	{
 
 		i++;
-		if (_strcmp(buffer, "exit\n") == 0)
-		{
-			free(buffer);
-			exit(EXIT_FAILURE);
-		}
+		handle_exit(buffer);
 		p = copy_buff(buffer, res);  /* copy of the buffer*/
 		if (p == NULL)
 		{
