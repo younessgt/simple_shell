@@ -27,6 +27,7 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 int _strncmp(char *str1, char *str2, int i);
 void handle_exit(char *buffer);
+void exec_cmd2(char **arg2, char *buffer, char *p, char **av, int i, char **arg);
 
 
 
