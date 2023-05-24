@@ -30,7 +30,7 @@ char **av, int j, char *p)
 		{
 			free(env_copy);
 			arg2 = extract2_tok(buff, n, arg);
-			exec_cmd2(arg2, buffer, p, av, j, arg);
+			exec_cmd(arg2, buffer, p, av, j);
 			freearg(arg2);
 			return;
 		}
