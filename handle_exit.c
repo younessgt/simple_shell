@@ -13,11 +13,16 @@ void handle_exit(char *buffer)
 	tok =  strtok(p, " \t\n");
 	while (tok != NULL)
 	{
-		if (_strcmp(tok, "exit") == 0)
+		if (_strcmp(tok, " ") == 0 || _strcmp(tok, "\t") == 0 ||
+				_strcmp(tok, "exit") == 0)
 		{
-			free(buffer);
-			exit(EXIT_SUCCESS);
+			if (_strcmp(tok, "exit") == 0)
+			{
+				free(buffer);
+				exit(EXIT_SUCCESS);
+			}
+			tok = strtok(NULL, " \t\n");
 		}
-		tok = strtok(NULL, " \t\n");
+		break;
 	}
 }
