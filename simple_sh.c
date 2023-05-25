@@ -27,11 +27,7 @@ int main(int ac __attribute__((unused)), char **av)
 		handle_env(buffer);
 		if (_strcmp(buffer, "env\n") != 0)
 		{
-			if (_strcmp(buffer, "exit\n") == 0)
-			{
-				free(buffer);
-				exit(EXIT_SUCCESS);
-			}
+			handle_exit(buffer);
 			p = copy_buff(buffer, res);  /* copy of the buffer*/
 			if (p == NULL)
 			{
