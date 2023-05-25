@@ -24,20 +24,24 @@ int main(int ac __attribute__((unused)), char **av)
 	{
 
 		i++;
-		if (_strcmp(buffer, "exit\n") == 0)
+		handle_env(buffer);
+		if (_strcmp(buffer, "env\n") != 0)
 		{
-			free(buffer);
-			exit(EXIT_SUCCESS);
+			if (_strcmp(buffer, "exit\n") == 0)
+			{
+				free(buffer);
+				exit(EXIT_SUCCESS);
+			}
+			p = copy_buff(buffer, res);  /* copy of the buffer*/
+			if (p == NULL)
+			{
+				free(buffer);
+				return (-1);
+			}
+			j = _process(buffer, i, p, av);
+			if (j == -1)
+				return (-1);
 		}
-		p = copy_buff(buffer, res);  /* copy of the buffer*/
-		if (p == NULL)
-		{
-			free(buffer);
-			return (-1);
-		}
-		j = _process(buffer, i, p, av);
-		if (j == -1)
-			return (-1);
 		if (intera == 1)
 			write(1, "$ ", 3);
 	}
