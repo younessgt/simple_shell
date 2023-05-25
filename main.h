@@ -27,6 +27,7 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 int _strncmp(char *str1, char *str2, int i);
 void handle_env(char *buffer);
+void _puts(char *str, int id);
 
 
 
